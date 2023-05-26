@@ -1,11 +1,18 @@
 import { X } from '@phosphor-icons/react'
+import { ProductTypes } from '../App'
 
-export function Header() {
+interface HeaderProps {
+  products: ProductTypes[]
+}
+
+export function Header({ products }: HeaderProps) {
   return (
     <header className="flex justify-between py-6 px-8">
       <span className="text-neutral-secondary">
         Seu carrinho tem{' '}
-        <strong className="text-neutral-primary">5 itens</strong>
+        <strong className="text-neutral-primary">
+          {products.length + ' itens'}
+        </strong>
       </span>
 
       <button>
